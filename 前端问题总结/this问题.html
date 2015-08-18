@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">                                                                                                                                                                                                       
+	<title>构造函数调用问题</title>
+</head>
+<body>                                                                                          
+	<script>  
+
+		var foo = 1;
+	function main(){
+	    console.log(foo);
+	    var foo = 2;
+	    console.log(this.                                                                                                                      foo)
+	    this.foo = 3;
+
+	}
+   var m1 = main();
+   var m2 = new main();     
+
+	var foo1 = 1;
+	function main1(){
+	    console.log(foo1);
+	    var foo1= 2;
+	    this.foo1=foo1;
+	    console.log(this.                                                                                                                      foo1)
+	    this.foo1 = 3;
+
+	}
+   var m3 = main1();
+   var m4 = new main1();
+	</script>
+	<h3>this默认指向windows。</h3>
+	<pre>
+	
+	var foo = 1;
+	function main(){
+	   console.log(foo);
+	    var foo = 2;
+	   console.log(this.foo)
+	    this.foo = 3;
+	}
+	var m1 = main();
+	var m2 = new main();
+	
+	</pre>
+	<h3>但是加上new调用时，指向this构造的对象。</h3>
+	<pre>
+	var foo1 = 1;
+	function main1(){
+	    console.log(foo1);
+	    var foo1= 2;
+	    this.foo1=foo1;
+	    console.log(this.foo1)
+	    this.foo1 = 3;
+	}
+   var m3 = main1();
+   var m4 = new main1();
+	</pre>
+</body>
+</html>                                                                                                                                                                                                          

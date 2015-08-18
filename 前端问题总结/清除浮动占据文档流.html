@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.parent{
+ background:#09c;
+
+}
+.child1,.child2,.child3{
+   float:left;
+   border:1px solid red;
+  height:60px;
+}
+
+/*.clear{
+ clear:both;
+}*/
+/*.parent{overflow: hidden;}
+.parent{overflow: auto;}*/
+.clearfix:after {content:""; display:block; clear:both; }
+.clearfix { *zoom:1; }
+
+ </style>
+</head>
+<body>
+<div class="parent clearfix">
+	<div class="child1">this is content of child1</div>
+	<div class="child2">this is content of child2</div>
+	<div class="child3">this is content of child3</div>
+	<div class="clear"></div>
+</div>
+<h3>父元素清除浮动的几种方法</h3>
+<p>最后一个自己元素后面添加一个clear的div</p>
+<p>父元素：</p>
+<p>设置overflow</p>
+<p>或者设置clearfix：after</p>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+var bySecLetter = function(x, y) {
+    if (typeof x === 'string' && typeof y === 'string') {
+        var a = x.slice(1)
+        ,   b = y.slice(1)
+        if (a > b) return 1
+        else if (a < b) return -1
+    }
+    return 0
+}
+
+var a = ["abd","acba","aba"]
+a.sort(bySecLetter)
+console.log(a);
+
+var arr = [1,2,3,4,5]; 
+arr.splice(1,2,3,4,5); 
+alert(arr.slice(1,3));
+alert(arr);
+
+	</script>
+</body>
+</html>

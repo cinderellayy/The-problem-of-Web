@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+	// 函数作用域
+      // var a = window.a = 'yunxiao'; console.log(a);function hello(){ console.log(a); var a = 'soho'; console.log(a);} hello();
+      // 变量作用域的测试
+//       function t(flag){
+//     if(flag){
+//         s="ifscope";
+//         for(var i=0;i<2;i++) 
+//             ;
+//     }
+//     console.log(i);
+// }
+// t(true);
+// console.log(s);
+// console.log(window.s);
+//函数作用域
+
+// function buttonInit(){  
+//     for(var i=1;i<4;i++){  
+  
+//         var b=document.getElementById("button"+i);  
+   
+//          b.addEventListener("click",(function(index){alert("Button"+index);})(i));  
+//     }  
+// }  
+// window.onload=buttonInit;  
+//历史遗留问题：
+function buttonInit(){  
+    for(var i=1;i<4;i++){  
+  
+         (function(index){
+         	 var b=document.getElementById("button"+index);  
+         	 b.addEventListener("click",function(){alert("Button"+index)})}
+         	 )(i)
+         
+    }  
+} 
+window.onload=buttonInit;  
+      // function T(){ this.name = 't';}function B(){ this.name = 'b';}var t = new T();T.prototype = B.prototype;console.log(t instanceof T);console.log(t instanceof B);
+	</script>
+</head>
+<body>
+	<button id="button1">Button1</button>  
+<button id="button2">Button2</button>  
+<button id="button3">Button3</button>  
+<script src="jquery.min.js"></script>
+</body>
+</html>

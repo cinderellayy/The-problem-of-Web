@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数字类型千分位</title>
+</head>
+<body>
+	<script>
+	var num=123456789.9;
+	function f(num){
+        if(typeof num != 'number')//判断是否位数字
+        	return;
+        num +='';
+        if(num.indexOf('.') != -1){//判断是否为小数
+        	return fn(num.split('.')[0])+'.'+num.split('.')[1];
+        }
+                else{
+                	return fn(num);
+                }
+       function fn(newNum){
+       	var str='';
+       	var l=newNum.length;
+       	while(l>3){
+       		str=','+newNum.substring(l-3,l)+str;
+       		l=l-3;
+       	}
+       	str=newNum.substring(0,1)+str;
+       	return str;
+       }
+        
+	}
+	console.log(f(num));
+	</script>
+</body>
+</html>

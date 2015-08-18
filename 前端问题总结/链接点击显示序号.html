@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>实现输出页面链接的序号</title>
+</head>
+<body>
+	<p><a href="#">1</a></p>
+	<p><a href="#">2</a></p>
+	<p><a href="#">3</a></p>
+	<script>
+  window.onload=function(){
+   	var length=document.links.length;
+   	for (var i = 0; i <length; i++) {
+   	      document.links[i].onclick=(function(index){
+   	      	return function(){alert(index+1);}
+   	      })(i)
+   	};
+   }
+   function getParents(ele) {
+    var matched = []
+    // 防止获取 document
+    while ( (ele = ele.parentNode) && ele.nodeType !== 9) {
+        matched.push(ele)
+    }
+    return matched
+} 
+a.getParents();
+	</script>
+</body>
+</html>
