@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+.wrap {
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+}
+
+.child {
+    min-height: 200px;
+    border: 2px solid #666;
+    margin: 10px;
+    font-size: 100px;
+    font-weight: bold;
+    font-family: Georgia;
+}
+/*等宽*/
+.flex {
+    -webkit-box-flex: 1;
+}
+/*一列固定宽度，两列1：2的宽度*/
+.w200 {
+    width: 200px
+}
+
+.flex1 {
+    -webkit-box-flex: 1
+}
+
+.flex2 {
+    -webkit-box-flex: 2
+}
+</style>
+<p>三列自适应布局，且有固定margin：</p>
+<div class="wrap">
+    <div class="child flex">1</div>
+    <div class="child flex">2</div>
+    <div class="child flex">3</div>
+</div>
+<p>当一列定宽，其余两列分配不同比例亦可(三列布局，一列定宽，其余两列按1：2的比例自适应)：</p>
+<div class="wrap">
+    <div class="child w200 ">1</div>
+    <div class="child flex1">2</div>
+    <div class="child flex2">3</div>
+</div>
+
+</html>
